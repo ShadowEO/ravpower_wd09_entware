@@ -1,6 +1,11 @@
 # Entware for Stock Ravpower WD009 routers (May work for other HooToo routers)
 ### Don't remove this HooToo (please!?!), this is so useful!
 
+
+## Dependencies:
+- PHP
+- Robo (robo.li)
+
 # How this works
 It turns out that the stock rc.local script looks on the mounted volumes for a disk image with the filename of `extern_package`. It
 mounts this file under /extern, and then executes /extern/etc/init.d/startup.sh. I figured that this would be useful for setting up a
