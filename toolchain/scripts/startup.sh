@@ -12,8 +12,11 @@ else
         echo "[Entware Startup] Woops, /opt is missing, creating it!"
         mkdir /opt
     fi
-    echo "[Entware Startup] Bind-mounting /extern to /opt for Entware's hardcoded binary prefix."
-    mount -o bind /extern /opt
+    # HooToo did something and now the rootfs is squashfs and read-only, can't create directories anymore.
+    # TODO: Future ME: Change all references from /extern to /opt, have script make an installer EnterRouterMode script that
+    # modifies rc.local to mount to the new directory.
+    #echo "[Entware Startup] Bind-mounting /extern to /opt for Entware's hardcoded binary prefix."
+    #mount -o bind /extern /opt
     echo "[Entware Startup] Starting Entware services and userland.."
     /opt/etc/init.d/rc.unslung start
     # If this is the first time it has been run, the shutdown script should be installed. It should only be a link to unslung.
